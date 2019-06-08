@@ -52,7 +52,6 @@ public class CoffeeNetOidcUser implements OidcUser, CoffeeNetUser, Serializable 
         return delegate.getIdToken();
     }
 
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
 

@@ -1,10 +1,6 @@
 package rocks.coffeenet.security.user;
 
-import org.springframework.security.core.GrantedAuthority;
-
 import java.net.URL;
-
-import java.util.Collection;
 
 
 /**
@@ -43,10 +39,4 @@ public interface CoffeeNetActor {
      * An URL to an image of this CoffeeNet actor. This MAY return {@code null}.
      */
     URL getPictureURL();
-
-
-    /**
-     * Returns the authorities granted to the actor.
-     */
-    Collection<? extends GrantedAuthority> getAuthorities();
 }
