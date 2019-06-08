@@ -27,7 +27,7 @@ public class OidcSecurityConfigurer extends GlobalCoffeeNetSecurityConfigurer<Oi
         if (oauth2Login != null) {
             http.apply(oauth2Login);
         } else {
-            http.oauth2Login();
+            http.oauth2Login().and().oauth2Client();
         }
     }
 
