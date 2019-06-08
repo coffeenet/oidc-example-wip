@@ -2,11 +2,13 @@ package rocks.coffeenet.autoconfigure.security.servlet.oidc;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.autoconfigure.security.oauth2.client.ClientsConfiguredCondition;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
@@ -26,6 +28,7 @@ import rocks.coffeenet.security.user.oidc.CoffeeNetOidcUserService;
  * @author  Florian 'punycode' Krupicka - zh@punyco.de
  */
 @Configuration
+@AutoConfigureBefore(SecurityAutoConfiguration.class)
 @ConditionalOnClass({ EnableWebSecurity.class, ClientRegistration.class })
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
 @Conditional(ClientsConfiguredCondition.class)
