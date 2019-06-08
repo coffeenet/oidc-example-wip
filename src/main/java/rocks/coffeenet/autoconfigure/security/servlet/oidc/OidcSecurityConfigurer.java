@@ -23,8 +23,11 @@ public class OidcSecurityConfigurer extends GlobalCoffeeNetSecurityConfigurer<Oi
         // We need to run before the OAuth2 login configurer
         OAuth2LoginConfigurer oauth2Login = http.removeConfigurer(OAuth2LoginConfigurer.class);
 
+        // re-apply existing or simply enable
         if (oauth2Login != null) {
             http.apply(oauth2Login);
+        } else {
+            http.oauth2Login();
         }
     }
 
