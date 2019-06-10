@@ -1,4 +1,4 @@
-package rocks.coffeenet.autoconfigure.security.servlet.oidc;
+package rocks.coffeenet.autoconfigure.security.oauth2.servlet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

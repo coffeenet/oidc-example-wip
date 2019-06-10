@@ -1,4 +1,4 @@
-package rocks.coffeenet.autoconfigure.security.servlet.oidc;
+package rocks.coffeenet.autoconfigure.security.oauth2.servlet;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
