@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.runner.WebApplicationContextRunner;
 
 import org.springframework.context.annotation.Configuration;
 
-import org.springframework.security.config.annotation.web.HttpSecurityBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 
 import rocks.coffeenet.autoconfigure.security.CoffeeNetSecurityAutoConfiguration;
 
@@ -44,15 +44,13 @@ class DelegatingSecurityConfigurerTests {
     }
 
     @Configuration
-    static class CustomConfigurer<H extends HttpSecurityBuilder<H>>
-        extends GlobalCoffeeNetSecurityConfigurer<CustomConfigurer<H>, H> {
+    static class CustomConfigurer extends GlobalCoffeeNetSecurityConfigurer<CustomConfigurer> {
 
         private boolean customized = false;
 
         @Override
-        protected void customize(H builder) throws Exception {
+        public void init(HttpSecurity builder) throws Exception {
 
-            super.customize(builder);
             customized = true;
         }
     }
