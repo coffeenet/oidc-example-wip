@@ -4,7 +4,6 @@ import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
-import org.springframework.boot.autoconfigure.security.servlet.WebSecurityEnablerConfiguration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -22,6 +21,6 @@ import rocks.coffeenet.autoconfigure.security.servlet.CoffeeNetWebSecurityConfig
 @Configuration
 @ConditionalOnClass(DefaultAuthenticationEventPublisher.class)
 @AutoConfigureBefore(SecurityAutoConfiguration.class)
-@Import({ WebSecurityEnablerConfiguration.class, CoffeeNetWebSecurityConfiguration.class })
+@Import(CoffeeNetWebSecurityConfiguration.class)
 public class CoffeeNetSecurityAutoConfiguration {
 }
