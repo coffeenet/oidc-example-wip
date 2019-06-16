@@ -39,4 +39,15 @@ public class OidcSecurityAutoConfiguration {
             return new OidcSecurityConfigurer();
         }
     }
+
+    @Configuration
+    @ConditionalOnMissingBean(CoffeeNetOidcProfileMapper.class)
+    static class CoffeenetOidcProfileMapperConfiguration {
+
+        @Bean
+        public CoffeeNetOidcProfileMapper coffeeNetOidcProfileMapper() {
+
+            return new CoffeeNetOidcProfileMapper();
+        }
+    }
 }

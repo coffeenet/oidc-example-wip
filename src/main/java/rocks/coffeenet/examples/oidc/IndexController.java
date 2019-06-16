@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import rocks.coffeenet.security.profile.CoffeeNetProfile;
+
 import java.security.Principal;
 
 import java.util.HashMap;
@@ -30,13 +32,10 @@ public class IndexController {
 
 
     @GetMapping(value = "/authentication-needed", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Map<String, Object> authenticationNeeded(Principal p) {
-
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    public Map<String, Object> authenticationNeeded(CoffeeNetProfile profile) {
 
         HashMap<String, Object> result = new HashMap<>();
-        result.put("principal", p);
-        result.put("authentication", authentication);
+        result.put("profile", profile);
 
         return result;
     }
