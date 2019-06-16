@@ -12,31 +12,34 @@ import java.net.URL;
  *
  * @author  Florian 'punycode' Krupicka - zh@punyco.de
  */
-public interface CoffeeNetActor {
+public interface CoffeeNetProfile {
 
     /**
-     * The name of this CoffeeNet actor. This MUST NOT return {@code null}.
+     * The name of this CoffeeNet profile. This MUST NOT return {@code null}.
      */
     String getName();
 
 
     /**
-     * The human readable name of this CoffeeNet actor. This MAY return {@code null}.
+     * The human readable name of this CoffeeNet profile. This MAY return {@code null}.
      */
-    default String getHumanReadableName() {
-
-        return getName();
-    }
+    String getHumanReadableName();
 
 
     /**
-     * An URL to a resource representation of this CoffeeNet actor. This MAY return {@code null}.
+     * An URL to a resource representation of this CoffeeNet profile. This MAY return {@code null}.
      */
     URL getProfileURL();
 
 
     /**
-     * An URL to an image of this CoffeeNet actor. This MAY return {@code null}.
+     * An URL to an image of this CoffeeNet profile. This MAY return {@code null}.
      */
     URL getPictureURL();
+
+
+    /**
+     * The email address of this CoffeeNet profile. This MAY return {@code null}.
+     */
+    String getEmail();
 }
