@@ -15,6 +15,16 @@ import java.net.URL;
 public interface CoffeeNetProfile {
 
     /**
+     * An unique identifier of this CoffeeNet profile, derived from the authenticated principal. This MUST NOT return
+     * {@code null}.
+     *
+     * <p>This should be implemented in a privacy-aware way, mapping the authentication information in a one-way
+     * fashion, so the originating authentication cannot be inferred.</p>
+     */
+    String getUniqueIdentifier();
+
+
+    /**
      * The name of this CoffeeNet profile. This MUST NOT return {@code null}.
      */
     String getName();
