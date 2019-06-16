@@ -13,31 +13,9 @@ import rocks.coffeenet.autoconfigure.security.servlet.GlobalCoffeeNetSecurityCon
  */
 public class OidcSecurityConfigurer extends GlobalCoffeeNetSecurityConfigurer<OidcSecurityConfigurer> {
 
-    private OidcUserService userService;
-
     @Override
     public void init(HttpSecurity http) throws Exception {
 
-        //J-
-        //@formatted:off
-        if (userService != null) {
-            http.oauth2Login()
-                    .userInfoEndpoint().oidcUserService(userService)
-                    .and()
-                .and()
-                .oauth2Client();
-        } else {
-            http.oauth2Login()
-                 .and()
-                 .oauth2Client();
-        }
-        //@formatted:on
-        //J+
-    }
-
-
-    void setUserService(OidcUserService userService) {
-
-        this.userService = userService;
+        http.oauth2Login().and().oauth2Client();
     }
 }
