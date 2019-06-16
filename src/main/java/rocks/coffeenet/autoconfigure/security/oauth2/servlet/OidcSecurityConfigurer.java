@@ -25,17 +25,11 @@ public class OidcSecurityConfigurer extends GlobalCoffeeNetSecurityConfigurer<Oi
                     .userInfoEndpoint().oidcUserService(userService)
                     .and()
                 .and()
-                .oauth2Client()
-                .and()
-                .formLogin().disable()
-                .httpBasic().disable();
+                .oauth2Client();
         } else {
             http.oauth2Login()
                  .and()
-                 .oauth2Client()
-                 .and()
-                 .formLogin().disable()
-                 .httpBasic().disable();
+                 .oauth2Client();
         }
         //@formatted:on
         //J+
