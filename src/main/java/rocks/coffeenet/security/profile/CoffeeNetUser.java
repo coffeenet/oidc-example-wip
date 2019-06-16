@@ -1,4 +1,4 @@
-package rocks.coffeenet.security.user;
+package rocks.coffeenet.security.profile;
 
 /**
  * A CoffeeNet actor representing an user.

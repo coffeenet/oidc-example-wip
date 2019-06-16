@@ -1,4 +1,4 @@
-package rocks.coffeenet.security.user;
+package rocks.coffeenet.security.profile;
 
 import java.net.URL;
 
